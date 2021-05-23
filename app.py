@@ -35,7 +35,7 @@ DistanceFromHome = gr.inputs.Slider(minimum=1, maximum=30, default=1, step=1, la
 NumCompaniesWorked = gr.inputs.Slider(minimum=0, maximum=40, default=0, step=1, label="Number of Companies Worked")
 
 def main():
-    gr.Interface(predict_attrition, [overtime, Age, TotalWorkingYears, MonthlyIncome, JobSatisfaction, YearsAtCompany, EnvironmentSatisfaction, RelationshipSatisfaction, DistanceFromHome, NumCompaniesWorked], "label", live=True, server_name='localhost', port=80).launch()
+    gr.Interface(predict_attrition, [overtime, Age, TotalWorkingYears, MonthlyIncome, JobSatisfaction, YearsAtCompany, EnvironmentSatisfaction, RelationshipSatisfaction, DistanceFromHome, NumCompaniesWorked],  outputs=label, capture_session=True, live=True).launch()
     
 if __name__ == '__main__':
 	main()
